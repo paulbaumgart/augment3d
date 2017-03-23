@@ -7,9 +7,16 @@
     mkdir build
     cd build
     cmake ..
-    make
+    make augment3d
 
 
 ### Running
 
-    build/augment3d <input_file>
+    cd build
+    ./augment3d <input_file>
+
+
+### Testing
+
+    cd build
+    make unittests && ./unittests
