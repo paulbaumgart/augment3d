@@ -2,6 +2,11 @@
 
 **Work in progress!**
 
+### Prerequisites
+
+    brew install boost --c++11
+    brew install homebrew/science/pcl
+
 ### Building
 
     mkdir build
