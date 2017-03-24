@@ -10,5 +10,5 @@ public:
     virtual std::string getFilenameSuffix(unsigned int ignored);
     virtual void doTransform(const pcl::PointCloud<pcl::PointXYZ>& cloud_in,
                              pcl::PointCloud<pcl::PointXYZ>& cloud_out,
-                             unsigned int ignored);
+                             unsigned int transform_idx);
 };
