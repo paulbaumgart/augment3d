@@ -2,9 +2,17 @@
 
 Perform data augmentation on your point clouds, to help your neural networks generalize better.
 
-### Prerequisites
+
+### Installing Prerequisites
+
+augment3d relies on the [PointCloudLibrary](http://pointclouds.org/documentation/), version 1.7 or later.
+
+On Linux: see [Prebuilt PCL binaries for Linux](http://pointclouds.org/downloads/linux.html)
+
+On Mac, using [homebrew](https://brew.sh/):
 
     brew install homebrew/science/pcl
+
 
 ### Building
 
@@ -20,31 +28,41 @@ Perform data augmentation on your point clouds, to help your neural networks gen
 
 Options:
 
-    -reflect (augment input point cloud data by reflecting it over a plane
-      through the origin) type: bool default: false
-    -reflect_normal (vector normal to the reflection plane) type: string
-      default: "0,1,0"
+    -reflect
+        augment input point cloud data by reflecting it over a plane through the origin
+    -reflect_normal
+        vector normal to the reflection plane
+        default: "0,1,0"
 
-    -rotate (augment input point cloud data by rotating it along an axis)
-      type: bool default: false
-    -rotate_axis (rotation axis) type: string default: "0,1,0"
-    -rotate_from (rotation start angle, in degrees) type: double default: -90
-    -rotate_steps (number of rotation steps, linearly interpolated between
-      rotate_from and rotate_to(must be 2 or more)) type: int32 default: 5
-    -rotate_to (rotation end angle, in degrees) type: double default: 90
-    
-    -scale (augment input point cloud data by scaling its dimensions)
-      type: bool default: false
-    -scale_from (x,y,z values from which to start scaling) type: string
-      default: "1,1,1"
-    -scale_steps (number of scaling steps, linearly interpolated between
-      scale_from and scale_to(must be 2 or more)) type: int32 default: 2
-    -scale_to (x,y,z values at which to stop scaling) type: string
-      default: "2,2,2"
+    -rotate
+        augment input point cloud data by rotating it along an axis
+    -rotate_axis
+        rotation axis
+        default: "0,1,0"
+    -rotate_from
+        rotation start angle, in degrees
+        default: -90
+    -rotate_to
+        rotation end angle, in degrees
+        default: 90
+    -rotate_steps
+        number of rotation steps, linearly interpolated between rotate_from and rotate_to (must be 2 or more)
+        default: 5
+
+    -scale
+        augment input point cloud data by scaling its dimensions
+    -scale_from
+        x,y,z values from which to start scaling
+        default: "1,1,1"
+    -scale_to
+        x,y,z values at which to stop scaling
+        default: "2,2,2"
+    -scale_steps
+        number of scaling steps, linearly interpolated between scale_from and scale_to (must be 2 or more)
+        default: 2
 
 
-
-### Testing
+### Unit Tests
 
     cd build
     make unittests && ./unittests
